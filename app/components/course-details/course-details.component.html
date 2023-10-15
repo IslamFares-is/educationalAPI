@@ -1,0 +1,425 @@
+
+<!-------------------------------------- media-player -------------------------------------->
+
+
+
+
+<div class="section-container">
+  <section class="media-player ">
+    <img src="{{imageForCourse}}" >
+    <div>
+      <!-- {{lessonFrame}} -->
+        <iframe  id ="vedio-iframe"  src="{{imageForCourse}}"  [src]="urlSafe"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</section>
+</div>
+
+
+<!-- strat model bootstrap  for edit section-->
+
+
+<div
+  class="modal" style="direction: rtl;"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displaySectionStyle}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title"  id="EditSectionNameModel">تعديل السكشن</h5>
+      <button
+        type="button"
+        class="btn-close"
+
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="AddSubject py-4"  >
+
+      <form [formGroup]="editSectionForm" >
+          <div class="row">
+              <div class="col-xs-12">
+                  <label for="name"> اسم السيكشن</label>
+                  <input type="text" id="name" class="form-control" formControlName="name">
+              </div>
+          </div>
+      </form>
+
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn " style="background-color: red;color: #fff;"  (click)="closePopupSection()">
+        Close
+      </button>
+      <button type="button" class="btn " style="background-color: blue;color: #fff;"[disabled]="editSectionForm.value.name ==''" (click)="SAVESECTION()">
+     حفط السيكشن
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!--delete section--> 
+
+<div
+  class="modal" style="direction: rtl;"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayConfirmationDeleteSection}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title"  id="EditSectionNameModel"> تاكيد حذف السيشكن</h5>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="AddSubject py-4"  >
+      <button type="button" class="btn " style="background-color: red;color: #fff;"  >
+        Close
+      </button>
+      <button type="button" class="btn " style="background-color: blue;color: #fff;" >
+     حذف السيكشن
+      </button>
+
+  </div>
+ 
+
+  </div>
+</div>
+<!-- endb model for edit section bootstrap-->
+
+
+<!-- strat model bootstrap  for edit lesson-->
+
+
+<div
+  class="modal" style="direction: rtl;"
+
+  role="dialog"
+  [ngStyle]="{'display':displayLessoonStyle}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" >تعديل الدرس</h5>
+      <button
+        type="button"
+        class="btn-close"
+
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="AddSubject py-4"  >
+
+      <form id="courseContent" [formGroup]="editSectionForm" >
+
+          <input type="text" name="LTitle" id="LTitle" placeholder="عنوان الدرس" formControlName="Ltitle">
+          <select name="select" id="select" formControlName="Ltype">
+              <option value="new_lesson">درس جديد</option>
+              <option value="new_test">اختبار جديد</option>
+           
+          </select>
+          <input type="text" name="link" id="link" placeholder="الرابط" formControlName="Llink">
+          
+      </form>
+
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn " style="background-color: red;color: #fff;"(click)="closePopupLesson()">
+        Close
+      </button>
+      <button type="button" class="btn " style="background-color: blue;color: #fff;" (click)="saveUpdatedLesson()">
+     حفط الدرس
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!--model for add section-->
+<div
+  class="modal" style="direction: rtl;"
+
+  role="dialog"
+  [ngStyle]="{'display':displayAddSectionStyle}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title"  >test  </h5>
+      <button
+        type="button"
+        class="btn-close"
+
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="AddSubject py-4"  >
+<mat-horizontal-stepper  linear #stepper >
+      <mat-step label=" اضافة قسم جديد" >
+        <div class="AddSubject py-4"  >
+            <div >اسم االقسم</div>
+
+
+            <mat-form-field appearance="fill" color="warn" class="py-2" >
+                <mat-label>اسم القسم</mat-label>
+                <input matInput type="text"  [formControl]="name"  >
+            </mat-form-field>
+            <button color="warn" class="ml-4"  mat-raised-button matStepperNext  >التالي</button>
+
+        </div>
+
+    </mat-step>
+
+    <mat-step >
+        <form id="courseContent"  [formGroup]="lessionForm" >
+          <h1>اضافة دروس واخنبارات</h1>
+
+            <input type="text" name="LTitle" id="LTitle" placeholder="عنوان الدرس" formControlName="lessonsTitle">
+            <br>
+            <select name="select" id="select" formControlName="lessonType">
+                <option value="new_lesson">درس جديد</option>
+                <option value="new_test">اختبار جديد</option>
+                <option value="new_file">اضافة ملف</option>
+            </select>
+            <br>
+            <input type="text" name="link" id="link" placeholder="الرابط" formControlName="LessonLink">
+            <br>
+            <div class="files">
+                <label for="files"><i class="fa-solid fa-cloud-arrow-up"></i>اختيار الملف</label>
+                <input type="file" name="files" id="files" accept=".pdf" formControlName="lessonFile">
+                <span></span>
+            </div>
+
+            <div class="questBtn">
+                <div>
+
+                  <button mat-raised-button color="primary" class=" m-2"  [disabled]="lessionForm.invalid" (click)="createLessons()" >حفظ الدرس</button>
+
+                </div>
+                <div>
+                  <button mat-raised-button color="primary" class=" m-2"  matStepperNext (click)="createSections()">حفظ القسم</button>
+
+
+                </div>
+
+            </div>
+        </form>
+                </mat-step>
+
+    </mat-horizontal-stepper>
+
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn " style="background-color: red;color: #fff;"(click)="closePopupAddSection()">
+        Close
+      </button>
+
+
+    </div>
+
+  </div>
+</div>
+<!--model for add  specify section  -->
+<div
+  class="modal" style="direction: rtl;"
+
+  role="dialog"
+  [ngStyle]="{'display':displayAddLessonStyle}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title"  >test  </h5>
+      <button
+        type="button"
+        class="btn-close"
+
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="AddSubject py-4"  >
+<mat-horizontal-stepper  linear #stepper >
+
+
+    <mat-step >
+        <form id="courseContent"  [formGroup]="lessionForm" >
+
+            <input type="text" name="LTitle" id="LTitle" placeholder="عنوان الدرس" formControlName="lessonsTitle">
+            <br>
+            <select name="select" id="select" formControlName="lessonType">
+                <option value="new_lesson">درس جديد</option>
+                <option value="new_test">اختبار جديد</option>
+                <option value="new_file">اضافة ملف</option>
+            </select>
+            <br>
+            <input type="text" name="link" id="link" placeholder="الرابط" formControlName="LessonLink">
+            <br>
+            <div class="files">
+                <label for="files"><i class="fa-solid fa-cloud-arrow-up"></i>اختيار الملف</label>
+                <input type="file" name="files" id="files" accept=".pdf" formControlName="lessonFile">
+                <span></span>
+            </div>
+
+            <div class="questBtn">
+                <div>
+
+                  <button mat-raised-button color="primary" class=" m-2"  [disabled]="lessionForm.invalid" (click)="saveLessonToSection()" >حفظ الدرس</button>
+
+                </div>
+                <div>
+
+
+                </div>
+
+            </div>
+        </form>
+                </mat-step>
+
+    </mat-horizontal-stepper>
+
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn " style="background-color: red;color: #fff;"(click)="closePopupAddLesson()">
+        Close
+      </button>
+
+
+    </div>
+
+  </div>
+</div>
+
+<!--edit main course Data-->
+
+<div
+  class="modal" style="direction: rtl;"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displaycourseDeatailsStyle}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title"  id="EditSectionNameModel">تعديل بيانات الكورس الرئيسية</h5>
+      <button
+        type="button"
+        class="btn-close"
+
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="AddSubject py-4"  >
+
+          
+      <form id="addCourse" [formGroup]="AddCourseForm">
+        <input type="text" name="title" id="title" formControlName="courseName"  class ="form-control" placeholder="اسم الكورس">
+        <br>
+        <input type="text" name="details" id="details" class ="form-control"  formControlName="courseDescription" placeholder="الوصف">
+        <br>
+        <select name="select" id="select"  formControlName="typeOfYear" class ="form-control">
+            <option value="1st secondary">اولى ثانوي</option>
+            <option value="2nd secondary">تانية ثانوي</option>
+            <option value="3rd secondary">تالتة ثانوي</option>
+            <option value="other">اخرى</option>
+        </select>
+        <br>
+        <input type="text" name="price" id="price"  formControlName="coursePrice" placeholder="السعر" class ="form-control">
+        <br>
+        <br>
+        <div class="">
+            <input type="file"  accept=".png, .jpg, .jpeg"  (change)="onFileSelected($event) " formControlName="courseImage" class ="form-control" >
+            <img [src]="selectedFile " alt="" class="imgCourse">
+        </div>
+        <br>        
+
+    </form>
+
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn " style="background-color: red;color: #fff;"  (click)="closePopupcourseDetails()">
+        Close
+      </button>
+      <button type="button" class="btn " style="background-color: blue;color: #fff;" (click)="saveUpdatedCourseData()">
+     حفط بيانات الكورس
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ----------------------------------- course details ------------------------------->
+<section class="details" *ngIf="isAdmin" >
+    <div>
+      <!-- <h1 class="text-center" >{{title}}</h1> -->
+      <div class="alert" *ngIf="del_course_alert">
+        <div>
+          <p>هل انت متأكد انك تريد حذف الكورس؟</p>
+          <span (click)="delCourseAlert()">الغاء</span>
+          <span (click)="deleteCourse()">حذف الكورس</span>
+        </div>
+      </div>
+      <button type="button" (click)="delCourseAlert()">حذف الكورس نهائيا</button>
+      <button type="button" (click)="addSection()"> اضافة قسم</button>
+      <button type="button"  (click)="editCourseData()">  تعديل بيانات الكورس الرئيسية</button>
+  </div>
+</section>
+
+
+<!-------------------------------------- sections -------------------------------------->
+
+<section class="sections">
+    <!-- new section -->
+    <div class="section" *ngFor="let section of sections ;let indexSection = index">
+        <div class="section-head" (click)="clickEvent()">
+              <div class="head-details">
+                <!-- <span > عدد الدروس: {{section.lessions.length}}</span> -->
+                <span> {{section.name}}</span>
+              </div>
+              <div>
+                <div class="img">
+                  <img src="assets/img/arrow.png" style="width: 15px;height: 15px;" [ngStyle]="dropDown ? {'transform':'rotate(180deg)'} :{'transform':'rotate(0)'} ">
+                </div>
+              </div>
+              <div class="section-edit" *ngIf="isAdmin">
+                <button type="button" (click)="editSectionName(indexSection)"><mat-icon>edit</mat-icon></button>
+                <button type="button" (click)="addLesons(indexSection)" ><mat-icon>add</mat-icon></button>
+                <button  (click)="delSectionAlert()" ><mat-icon>delete</mat-icon></button>
+              </div>
+
+              <!-- delete section alert -->
+              <div class="alert" *ngIf="del_section_alert">
+                <div>
+                  <p>هل انت متأكد انك تريد حذف السكشن؟</p>
+                  <span (click)="delSectionAlert()">الغاء</span>
+                  <span (click)="deleteSection(indexSection)">حذف السكشن</span>
+                </div>
+              </div>
+        </div>
+        <div class="lessons"  [ngClass]="status ? 'lessons_full_height' : ''"  >
+          <ng-container *ngFor="let lesson of section.lessions ; let indexlesson=index,">
+            <div class="course_video" (click)="lesson.lessonType === 'new_lesson' ? changUrlVedio(lesson.LessonLink) : ''">
+                <div class="lesson-edit" style="padding:0">
+                  <button type="button"   (click)="editLessons(indexlesson,indexSection)" *ngIf="isAdmin"><mat-icon>edit</mat-icon></button>
+                  <button  (click)="delLessonAlert()" *ngIf="isAdmin"> <mat-icon >delete</mat-icon> </button>
+                </div>
+                <!-- <div>
+                  <button *ngIf ="lesson.lessonType == 'new_lesson'"  (click)="changUrlVedio(lesson.LessonLink)">ابدأ</button>
+                </div> -->
+                <div>      
+                  <a *ngIf ="lesson.lessonType == 'new_test'" href="{{lesson.LessonLink}}" target="_blank"> لينك الاختبار </a>   
+                </div>
+                <p style="margin-bottom: 0"> {{lesson.lessonsTitle}}</p>
+
+              </div>
+              <!-- delete lesson alert -->
+              <div class="alert" *ngIf="del_lesson_alert">
+                <div>
+                  <p>هل انت متأكد انك تريد حذف الدرس؟</p>
+                  <span (click)="delLessonAlert()">الغاء</span>
+                  <span (click)="deleteLessonection(indexlesson,indexSection)">حذف الدرس</span>
+                </div>
+              </div>
+            </ng-container>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
+

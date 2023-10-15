@@ -1,0 +1,83 @@
+
+section {
+    background-image: url(/assets/img/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    font-family: Almarai;
+}
+
+.mat-radio-button {
+    font-family: 'Almarai' !important;
+    color:white !important;
+}
+.container > div {
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow:0 0 10px rgb(189, 185, 185);
+    width:400px;
+    max-width: 95%;
+    max-height: 90%;
+    padding:1rem;
+}
+
+button {
+    background-color: rgb(73, 1, 189);
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+input {
+    border:2px solid transparent;
+    border-bottom-color: rgb(73, 1, 189);
+}
+
+input:focus {
+    border:2px solid transparent;
+    border-bottom-color: rgb(73, 1, 189);
+}
+
+.role {
+    margin-bottom:1rem;
+}
+
+.role > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+}
+
+
+
+element.style {
+    background-color: #0069d6;
+    padding: 5px;
+    border-radius: 3px;
+    color: white !important;
+}
+.mat-mdc-radio-button.mat-accent {
+    /* --mdc-radio-disabled-selected-icon-color: #000; */
+    /* --mdc-radio-disabled-unselected-icon-color: #000; */
+    /* --mdc-radio-unselected-hover-icon-color: #212121; */
+    /* --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54); */
+    /* --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54); */
+    /* --mdc-radio-selected-focus-icon-color: #ff4081; */
+    /* --mdc-radio-selected-hover-icon-color: #ff4081; */
+    --mdc-radio-selected-icon-color: white;
+    /* --mdc-radio-selected-pressed-icon-color: #ff4081; */
+    /* --mat-radio-ripple-color: #000; */
+    /* --mat-radio-checked-ripple-color: #ff4081; */
+    /* --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38); */
+}
+
+.mdc-label{
+    color: white;
+    border:solid;
+}
+

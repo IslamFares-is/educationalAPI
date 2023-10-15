@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box !important;
+    font-family: "Almarai", sans-serif;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background-color: #EEF1F7;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-image: url(../Images/landing2.svg); */
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .container {
+    margin: 2rem auto;
+    width:750px;
+    max-width: 90%;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: white;
+   /* background-image: url(../Images/landing.svg);*/
+    padding: 2rem;
+    box-shadow: 0 0 10px 0 rgba(205, 202, 202, 0.742);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .container h1 {
+    text-align: center;
+  }
+  .container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+ 
+  
+  input, select, .files {
+    text-align: right;
+    padding: 5px;
+    height: 50px;
+    border: 0;
+    /* font-size: 1rem; */
+    color: #0B2744;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: 1px 0 3px 0 rgb(161, 154, 154);
+    border: 1px solid rgb(227, 224, 224);
+  }
+  .CoursetBtn button{
+    padding: 8px;
+    margin-right: 15px;
+    margin-top: 15px;
+
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+  }
+  
+  option {
+    outline: none;
+  }
+  .questBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .questBtn button{
+    margin: 5px;
+  }
+  
+
+  
+
+  
+  .files {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 250px;
+    overflow: hidden;
+  }
+  .files input {
+    display: none;
+  }
+  .files label {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    caret-color: transparent;
+  }
+  .files label i {
+    display: block;
+  }
+  .files img {
+    width: 100px;
+  }/*# sourceMappingURL=style.css.map */
+
+  .new-exam {
+    padding: 50px 0;
+ 
+}
+
+.new-exam button {
+        margin-right: 15px;
+    }
+    
+    .new-exam .question {
+        width: 70%;
+        margin: 50px auto;
+    }
+    .new-exam .question form mat-form-field {
+      
+                width: 88%;
+                margin-top: 30px;
+            }
+            .new-exam .question form mat-form-field .queiz {
+                    width: 100%;
+                }
+   
+                .new-exam .question form   .questBtn {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+   
+    
+    
+    .examBox {
+        width: 90%;
+        margin: 50px auto;
+        border: 1px solid #DDD;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .examBox .examhead {
+            margin-top: -40px;
+
+            margin-bottom: 20px;
+        }
+        .examBox .examhead h2 {
+                font-family: 'Almarai', sans-serif;
+                display: inline-block;
+                padding: 5px 88px;
+                background-color: #f44336;
+                border-radius: 30px;
+                font-size: 28px;
+                color: #FFf;
+            }
+        
+    
+        .quizBox .row{
+       
+               padding-right: 30px;
+        }
+        .quizBox .row .col-sm-12 {
+                margin: 7px 0px;
+                font-size: 20px;
+             }
+           
+            strong {
+                font-size: 22px;
+            }
+      
+    
+    
+    
+    
+    .alert-danger {
+        background-color: #f44336c4;
+        color:#FFF;
+        margin-top: 15px;
+        font-size: 18px;
+    }
+    
+    .text-success {
+        color: #0ec311;
+    }

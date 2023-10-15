@@ -1,0 +1,87 @@
+
+
+<section id="courses">
+
+    <h2 class="text-center">الكورسات المتاحة</h2>
+    <div class="container">
+    <div class="row" >
+
+    <div class="col-md-3 m-2" *ngFor="let course of coursesList;let i =index "  >
+        <div class="box "  >
+        <div class="item ">
+            <img [src]="course.courseImage" alt="course-bg" class="img-fluid" >
+            <h3  class="pt-2 px-2" >{{course.courseName}}</h3>
+            <p class="pt-2 px-2" >{{course.courseDescription }}</p>
+            <div class="d-flex justify-content-between pt-2 px-2">
+                <p > <span style="color: #202020;font-weight: 500;">{{course.coursePrice}} </span>  $  </p>
+
+            </div>
+           
+        <hr>
+
+            <button class="btn btn-danger text-center m-4 "  *ngIf="coursesSubscriptionIndex[i] == -1 && !isAdmin " (click)="courseSubscription(i)" >الاشتراك في الكورس  </button>
+       <!---     <button class="btn btn-primary text-center m-4 " (click)="courseSubscription(i)" >  انت مشترك في هذا الكورس  </button> -->
+            <div class="heading" >
+              
+                <main *ngIf="coursesSubscriptionIndex[i] !== -1">
+                    <section>
+                      <div class="alert ">
+                  <p>انت بالفعل في هذا الكورس</p>
+                      </div>
+                      </section>
+                      </main>
+            </div>
+
+
+        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="courses">
+
+  <h2 class="text-center" *ngIf ="!isAdmin">الكورسات المشترك فيها</h2>
+  <h2 class="text-center" *ngIf ="isAdmin">  جميع الكورسات</h2>
+
+<div class="container">
+  <div class="row" >
+
+  <div class="col-md-3 m-2" *ngFor="let course of courses;let i =index " >
+      <div class="box "  >
+      <div class="item ">
+          <img [src]="course.courseImage" alt="course-bg" class="img-fluid" >
+          <h3  class="pt-2 px-2" >{{course.courseName}}</h3>
+          <p class="pt-2 px-2" >{{course.courseDescription }}</p>
+          <div class="d-flex justify-content-between pt-2 px-2">
+              <p > <span style="color: #202020;font-weight: 500;">{{course.coursePrice}} </span>  $  </p>
+
+          </div>
+
+
+      </div>
+      <hr>
+          <button class="btn btn-danger text-center m-4 " routerLink="/details/{{course.id}}" > مشاهدة الكورس  </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<!--<a [routerLink]="linkEnabled ? 'path' : null"
+   [routerLinkActive]="linkEnabled ? 'is_active' : 'is_disabled'">Link</a>
+Optional CSS:
+
+.is_disabled {
+    cursor: default;
+    text-decoration: none;
+}
+
+.is_active {
+    // your style for active router link
+}-->

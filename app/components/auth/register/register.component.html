@@ -1,0 +1,114 @@
+<!--
+    <form [formGroup]="SignUpForm">
+   
+      
+        <label for="FirstName">الاسم الاول: </label>
+        <input id="FirstName" type="text" formControlName="FirstName">
+    
+      <br>
+        <label for="LastName">الاسم الاخير: </label>
+        <input id="LastName" type="text" formControlName="LastName">
+        <br>
+      
+        <label for="studentphone">رقم تليفون الطالب: </label>
+        <input id="studentphone" type="text" formControlName="StudentPhoneNumber">
+      <br>
+
+        <label for="parentphone">رقم تليفون ولي الامر: </label>
+        <input id="parentphone" type="text" formControlName="ParentStudentPhoneNumber">
+        <br>
+      
+        <label for="email">البريد الالكتروني </label>
+        <input id="email" type="email" formControlName="Email">
+      <br>
+
+        <label for="password">كلمة المرور  </label>
+        <input id="password" type="password" formControlName="password">
+      <br>
+
+        <label for="confirmPassword">تاكيد كلمة المرور   </label>
+        <input id="confirmPassword" type="password" formControlName="confirmPassword">
+      <br>
+
+  
+<button type="submit" [disabled]=" (SignUpForm.value.password !== SignUpForm.value.confirmPassword)"  (click)="onSubmit()">انشاء الحساب</button>
+</form>
+
+-->
+
+
+
+<!--start section-->
+<section >
+    <div class="container flex mx-auto   flex-col-reverse md:flex-row p-6">
+        <div>
+            <div class="">
+                <!--p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 -->
+                <div class="info-form text-right">
+                <p style="font-weight: bold;font-size: 1.5rem;">انشاء حساب جديد</p>
+                <span style="color: #999; font-size: 16px;">ادخل بياناتك بشكل صحيح للحصول علي افضل تجربةداخل الموقع</span>
+                
+                </div>
+            <form dir="rtl" [formGroup]="SignUpForm">
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_first_name" formControlName="FirstName" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الاسم الاول</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_last_name"  formControlName="LastName" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الاسم الاخير </label>
+                    </div>
+                </div>
+
+                
+                <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="relative z-0 w-full mb-6 group">
+                      <input type="tel"  name="floating_phone" formControlName="StudentPhoneNumber" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم  الهاتف</label>
+                  </div>
+                  <div class="relative z-0 w-full mb-6 group">
+                    <input type="tel"  name="floating_phone" formControlName="ParentStudentPhoneNumber" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم هاتف ولي الامر</label>
+                </div>
+                
+                </div>
+                  <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="floating_company"  formControlName="year" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"> السنة الدراسية</label>
+                </div>
+                
+            
+                
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" name="floating_email"   formControlName="Email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">البريد الالكتروني </label>
+                </div>
+            
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="password" name="floating_password" formControlName="password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">كلمة السر</label>
+                </div>
+            
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="password" name="repeat_password" formControlName="confirmPassword" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" >تاكيد كلمة السر</label>
+                </div>
+            
+            
+                <button type="submit" class="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"  (click)="onSubmit()" [disabled]="!SignUpForm.valid || (SignUpForm.value.password !=SignUpForm.value.confirmPassword)">انشاء الحساب</button>
+            
+        <a routerLink="/login" color="primary">لديك حساب بالفعل؟</a>
+              </form>
+              
+            </div>
+        </div>
+        <!--<div class="md:w-1/2">
+            <img src="assets/img/register.avif" alt="hero-img">
+        </div>-->
+        
+    </div>
+</section>
+<!--end section-->
+
+

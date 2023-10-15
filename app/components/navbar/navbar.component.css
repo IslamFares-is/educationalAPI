@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "almarai";
+    caret-color: transparent;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+
+  
+
+  nav img {
+    width: 50px;
+    color: rgb(234, 227, 227);
+  }
+  nav li a {
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(73, 1, 189);
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.3s ease-in-out;
+  }
+  nav li a:hover {
+    background-color: rgb(168, 8, 40);
+  }

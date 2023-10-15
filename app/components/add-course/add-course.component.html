@@ -1,0 +1,80 @@
+    <!-- add course form -->
+    <section class="container">
+        
+        
+
+        <mat-horizontal-stepper linear #stepper [selectedIndex]="stepperIndex">
+
+            <mat-step label="اضافة كورس" [completed]="startAdd">
+             
+          <form id="addCourse" [formGroup]="AddCourseForm">
+            <input type="text" name="title" id="title" formControlName="courseName" placeholder="اسم الكورس">
+            <input type="text" name="details" id="details"   formControlName="courseDescription" placeholder="الوصف">
+            <select name="select" id="select"  formControlName="typeOfYear">
+                <option value="1st secondary">اولى ثانوي</option>
+                <option value="2nd secondary">تانية ثانوي</option>
+                <option value="3rd secondary">تالتة ثانوي</option>
+                <option value="other">اخرى</option>
+            </select>
+            <input type="text" name="price" id="price"  formControlName="coursePrice" placeholder="السعر">
+            <div class="">
+               <!-- <label for="thumbnail"><i class="fa-solid fa-cloud-arrow-up"></i>الصورة المصغرة</label>-->
+                <input type="file"  accept=".png, .jpg, .jpeg"  (change)="onFileSelected($event) " formControlName="courseImage" >
+                <img [src]="selectedFile" alt="" class="imgCourse">
+            </div>
+          <!--
+
+         <button id="add" (click)="submit()" [disabled]="AddCourseForm.invalid ">انشاء</button>-->
+            <button color="warn" class="ml-4"   [disabled]="AddCourseForm.invalid " mat-raised-button matStepperNext (click)="next()"  >التالي</button>
+
+        </form>
+  
+            </mat-step>
+           
+            <mat-step label=" اضافة قسم جديد" [completed]="preview">
+                <div class="AddSubject py-4"  >
+                    <div >اسم االقسم</div>
+    
+                 
+                    <mat-form-field appearance="fill" color="warn" class="py-2" >
+                        <mat-label>اسم القسم</mat-label>
+                        <input matInput type="text" [formControl]="name" >
+                    </mat-form-field>
+                    <button color="warn" class="ml-4"  mat-raised-button matStepperNext (click)="start()" >التالي</button>
+    
+                </div>
+    
+            </mat-step>
+
+            <mat-step label="دروس {{subjectName}}" [completed]="startAdd">
+                <form id="courseContent" [formGroup]="lessionForm">
+                  <h1>اضافة دروس واختبارات {{subjectName}}</h1>
+                
+                    <input type="text" name="LTitle" id="LTitle" placeholder="عنوان الدرس" formControlName="lessonsTitle">
+                    <select name="select" id="select" formControlName="lessonType">
+                        <option value="new_lesson">درس جديد</option>
+                        <option value="new_test">اختبار جديد</option>
+                     
+                    </select>
+                    <input type="text" name="link" id="link" placeholder="الرابط" formControlName="LessonLink">
+                   
+               
+                    <div class="questBtn">
+                        <div>
+                            <button mat-raised-button color="warn" class=" m-2"  (click)="CreateCourse()" *ngIf="finalSaveCourse" >  حفظ نهائي للكورس</button>
+                            
+                            <button mat-raised-button color="warn" class=" m-2" matStepperPrevious (click)="addNewSection()" >اضافة قسم جديد</button>
+                            <button mat-raised-button color="primary" class=" m-2"  matStepperNext (click)="createSections()" >حفظ القسم</button>
+                        </div>
+                        <div>
+                            <button mat-raised-button color="accent" class=" m-2" (click)="clearForm()">Delete </button>
+                            <button mat-raised-button color="primary" class=" m-2" [disabled]="lessionForm.invalid" (click)="createLessons()" >حفظ الدرس</button>
+                        </div>
+
+                    </div>
+                </form>
+                        </mat-step>
+
+            </mat-horizontal-stepper>
+
+        </section>

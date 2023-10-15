@@ -1,0 +1,80 @@
+<mat-card>
+    <mat-card-header>
+        <h2>User Activation Requests</h2>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-elevation-z8">
+            <table mat-table matSort  [dataSource]="dataSource ">
+               <!-- Position Column -->
+               <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Request ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="userId">
+                <th mat-header-cell *matHeaderCellDef> UserID </th>
+                <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container  matColumnDef="name">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name }} </td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element "> {{element.email}} </td>
+              </ng-container>
+                <!-- Weight Column -->
+
+              <!---
+              <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef> phone </th>
+                <td mat-cell *matCellDef="let element"> {{element.StudentPhoneNumber }} </td>
+              </ng-container>-->
+              <!-- Symbol Column -
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.isactive ? 'Active':'In Active'}} </td>
+              </ng-container>
+            -->
+
+              <ng-container matColumnDef="courseId">
+                <th mat-header-cell *matHeaderCellDef> courseId </th>
+                <td mat-cell *matCellDef="let element"> {{element.courseId}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="activateCourse">
+                <th mat-header-cell *matHeaderCellDef> Activation Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.isActiveCourse}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element ;let i =index">
+                    <button *ngIf="element.isActiveCourse == false "  mat-raised-button color="primary"(click)="ActivateCourse(i)" style="margin-right: 5PX;" >تفعيل الكورس </button>
+                    <button *ngIf="element.isActiveCourse == true"  mat-raised-button color="warn"(click)="CancelActivateCourse(i)">الغاء تفعيل الكورس </button>
+
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                           showFirstLastButtons
+                           aria-label="Select page of periodic elements">
+            </mat-paginator>
+          </div>
+    </mat-card-content>
+  </mat-card>
+
+
+
+
+
+

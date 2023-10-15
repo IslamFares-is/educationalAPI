@@ -1,0 +1,36 @@
+
+<!--start section-->
+<section >
+    <div class="container flex mx-auto  flex-col-reverse md:flex-row p-6">
+        <div class="md:w-1/2 ">
+            <form dir="rtl" [formGroup]="loginForm" class="m-12">
+                <div class="role">
+                    <mat-radio-group (change)="changeRole($event)" formControlName="type" > 
+                        <mat-radio-button value="students"   style="background-color: rgb(73, 1, 189); padding:5px; flex: 1; border-radius: 3px; cursor: pointer; direction: ltr;" >Student</mat-radio-button>
+                        <mat-radio-button value="professor" style="background-color: rgb(73, 1, 189); padding:5px; flex: 1; border-radius: 3px; cursor: pointer; direction: ltr;" >Admin</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            
+                
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" name="floating_email"   formControlName="Email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">البريد الالكتروني </label>
+                </div>
+            
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="password" name="floating_password" formControlName="password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">كلمة السر</label>
+                </div>
+            
+              
+            
+                <button type="submit" class="text-white bg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"  (click)="login()"> تسجيل الدخول</button>
+                <a routerLink="/register" color="primary">Create Account ?</a>
+              </form>
+              
+            </div>
+        </div> 
+</section>
+<!--end section-->
+
+

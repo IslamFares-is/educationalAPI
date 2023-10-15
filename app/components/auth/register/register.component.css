@@ -1,0 +1,43 @@
+section {
+    font-family: 'Almarai';
+    background-image: url(/assets/img/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -100px;
+}
+
+
+
+.container > div {
+    margin: auto;
+    background-color: white;
+    padding:2rem;
+    box-shadow:0 0 10px rgb(189, 185, 185);
+}
+
+input {
+    border:1px solid transparent;
+    border-bottom-color: rgb(73, 1, 189);
+}
+
+input:focus {
+    border:2px solid transparent;
+    border-bottom-color: rgb(73, 1, 189);
+}
+
+.info-form {
+    margin-bottom: 2rem;
+}
+.info-form p {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(73, 1, 189);
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
